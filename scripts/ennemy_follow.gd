@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 @export var vitesse:float = 10
-
+@export var target:Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
