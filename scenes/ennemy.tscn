@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0esgngfl4gg0"]
+[gd_scene load_steps=5 format=3 uid="uid://0esgngfl4gg0"]
 
 [ext_resource type="Script" path="res://scripts/ennemy_follow.gd" id="1_2md5m"]
 [ext_resource type="Texture2D" uid="uid://bdi1t4gsm3j62" path="res://assets/icon.svg" id="1_3na1x"]
+[ext_resource type="Script" path="res://scripts/ennemy.gd" id="2_j6oky"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
@@ -17,7 +18,20 @@ animations = [{
 [node name="ennemy_follow" type="PathFollow2D"]
 script = ExtResource("1_2md5m")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="ennemy" type="Area2D" parent="."]
+script = ExtResource("2_j6oky")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+[node name="sprite" type="AnimatedSprite2D" parent="ennemy"]
+rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_bvip6")
+
+[node name="shape" type="CollisionPolygon2D" parent="ennemy"]
+polygon = PackedVector2Array(70, -70, 70, 70, -70, 70, -70, -70)
+
+[node name="bullet_start" type="Node2D" parent="ennemy"]
+position = Vector2(100, 0)
+
+[node name="Timer" type="Timer" parent="ennemy"]
+autostart = true
+
+[connection signal="timeout" from="ennemy/Timer" to="ennemy" method="_on_timer_timeout"]
