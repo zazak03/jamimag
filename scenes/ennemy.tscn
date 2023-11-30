@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://0esgngfl4gg0"]
+[gd_scene load_steps=4 format=3 uid="uid://0esgngfl4gg0"]
 
 [ext_resource type="Texture2D" uid="uid://bdi1t4gsm3j62" path="res://assets/icon.svg" id="1_3na1x"]
+[ext_resource type="Script" path="res://scripts/ennemy.gd" id="1_5ygyb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
@@ -13,7 +14,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ennemy" type="Node2D"]
+[node name="ennemy" type="PathFollow2D"]
+script = ExtResource("1_5ygyb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bvip6")
