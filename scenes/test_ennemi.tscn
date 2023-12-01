@@ -22,7 +22,7 @@ curve = SubResource("Curve2D_i1xlv")
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("2_jss2h")]
 position = Vector2(553, 387)
 rotates = false
-vitesse = 0.0
+vitesse = 100.0
 target = NodePath("../../fleche")
 vitesse_de_tire = 1.0
 
