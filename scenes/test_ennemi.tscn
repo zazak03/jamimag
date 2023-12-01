@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6jhhekvfdky3"]
+[gd_scene load_steps=5 format=3 uid="uid://b6jhhekvfdky3"]
 
 [ext_resource type="PackedScene" uid="uid://vqd4534aral7" path="res://scenes/fleche.tscn" id="1_gt3it"]
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="2_jss2h"]
+[ext_resource type="PackedScene" uid="uid://dfa0uqykx8bmq" path="res://scenes/mur.tscn" id="3_2ff00"]
 
 [sub_resource type="Curve2D" id="Curve2D_i1xlv"]
 _data = {
@@ -20,6 +21,10 @@ curve = SubResource("Curve2D_i1xlv")
 
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("2_jss2h")]
 position = Vector2(553, 387)
+rotates = false
 vitesse = 0.0
 target = NodePath("../../fleche")
 vitesse_de_tire = 1.0
+
+[node name="mur" parent="." instance=ExtResource("3_2ff00")]
+layer_0/tile_data = PackedInt32Array(65534, 65536, 1, -2, 65536, 1, -65538, 65536, 1, -65537, 65536, 1, -131072, 65536, 1, -131071, 65536, 1, -131070, 65536, 1, -131069, 65536, 1, -131068, 65536, 1, -131067, 65536, 1, -65531, 65536, 1, -65530, 65536, 1, -65529, 65536, 1, -65528, 65536, 1)
