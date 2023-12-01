@@ -50,6 +50,10 @@ func decale2(val, tab):
 	tab.push_front(val)
 	tab.pop_back()
 
+func decale_cercle(tab):
+	var tampon = tab[0]
+	decale2(tampon, tab)
+
 
 #CLE: Fonction qui s'occupe de décaler tous les points de la cape
 #Pour Tristan : il faut que tu mette DepCape dans la scène principale, de manière à ce qu'elle suive

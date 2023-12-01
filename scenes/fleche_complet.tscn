@@ -2,7 +2,21 @@
 
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
 [ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="2_htwda"]
-[ext_resource type="Script" path="res://scenes/DepCape.gd" id="3_rnk6q"]
+
+[sub_resource type="GDScript" id="GDScript_t2luu"]
+script/source = "extends Node2D
+var parent_rotation
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	parent_rotation = get_parent().rotation
+	rotation = - parent_rotation
+"
 
 [node name="Fleche_complet" type="Node2D"]
 
@@ -11,7 +25,7 @@ script = ExtResource("1_pdq3k")
 
 [node name="DepCape" type="Node2D" parent="fleche"]
 position = Vector2(-50, 0)
-script = ExtResource("3_rnk6q")
+script = SubResource("GDScript_t2luu")
 
 [node name="FlecheSprite" type="Sprite2D" parent="fleche"]
 texture = ExtResource("2_htwda")
