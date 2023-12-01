@@ -6,9 +6,11 @@ var bullet_scene = preload("res://scenes/projectile.tscn")
 
 func tirer():
 	var bullet_instance = bullet_scene.instantiate()
-	bullet_instance.global_position = $ennemy_oriantation/bullet_start.global_position
-	bullet_instance.global_rotation = $ennemy_oriantation.global_rotation
+	$ennemy_oriantation.global_rotation = 0
+	$ennemy_oriantation.rotate(get_angle_to(target.global_position))
 	add_child(bullet_instance)
+	bullet_instance.global_position = $ennemy_oriantation/bullet_start.global_position
+	bullet_instance.global_rotation = $ennemy_oriantation.global_rotation + PI/2
 	
 
 
@@ -20,7 +22,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	global_rotation = 0
+	$ennemy_oriantation.global_rotation = 0
 	$ennemy_oriantation.rotate(get_angle_to(target.global_position))
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4yurg8bd5v0j"]
+[gd_scene load_steps=5 format=3 uid="uid://c44tjac136fje"]
 
 [ext_resource type="Texture2D" uid="uid://dxxcyyk6opg3s" path="res://assets/test-alpha.png" id="1_17lt6"]
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_50jqa"]
@@ -18,9 +18,8 @@ animations = [{
 radius = 53.0
 height = 182.0
 
-[node name="Bullet" type="RigidBody2D"]
-position = Vector2(-2, -2)
-gravity_scale = 0.0
+[node name="Bullet" type="Area2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_50jqa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -31,6 +30,3 @@ sprite_frames = SubResource("SpriteFrames_uxdfl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 25)
 shape = SubResource("CapsuleShape2D_p0e6k")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(554, 290)

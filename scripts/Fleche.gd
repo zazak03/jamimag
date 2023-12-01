@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 var speed = 400
 var rot_speed = PI/3 + PI/4
 

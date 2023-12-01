@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ennemy_follow.gd" id="1_2md5m"]
 [ext_resource type="Script" path="res://scripts/ennemy.gd" id="2_j6oky"]
-[ext_resource type="Texture2D" uid="uid://csldha0pddqg6" path="res://assets/icon.svg" id="3_56d6m"]
+[ext_resource type="Texture2D" uid="uid://bdi1t4gsm3j62" path="res://assets/icon.svg" id="3_56d6m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
@@ -67,13 +67,12 @@ libraries = {
 blend_times = [&"new_animation", &"new_animation", 0.003]
 
 [node name="shape" type="CollisionPolygon2D" parent="ennemy"]
-visible = false
 polygon = PackedVector2Array(28, -53, 44, 0, 30, 40, -28, 43, -36, -3, -25, -53)
 
 [node name="ennemy_oriantation" type="Node2D" parent="ennemy"]
-position = Vector2(100, 0)
 
 [node name="bullet_start" type="Node2D" parent="ennemy/ennemy_oriantation"]
+position = Vector2(100, 0)
 
 [node name="Timer" type="Timer" parent="ennemy"]
 autostart = true
