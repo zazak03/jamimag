@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://fleche_complet.gd" id="1_chhpv"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
-[ext_resource type="Texture2D" uid="uid://cgjmjlbh0hs7j" path="res://assets/fleche.png" id="2_htwda"]
+[ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="2_htwda"]
 
 [node name="Fleche_complet" type="Node2D"]
 script = ExtResource("1_chhpv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyrorkox0f04m"]
+[gd_scene load_steps=3 format=3 uid="uid://8m1cyrhv65yc"]
 
 [ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="1_kt538"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="2_e58a0"]
