@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnqgy2r3w74tp"]
+
+[ext_resource type="PackedScene" uid="uid://cyrorkox0f04m" path="res://scenes/fleche.tscn" id="1_gt3it"]
+[ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="2_jss2h"]
+
+[sub_resource type="Curve2D" id="Curve2D_i1xlv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500, 500)
+}
+point_count = 1
+
+[node name="Node2D" type="Node2D"]
+
+[node name="fleche" parent="." instance=ExtResource("1_gt3it")]
+position = Vector2(183, 314)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_i1xlv")
+
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("2_jss2h")]
+position = Vector2(500, 500)
+target = NodePath("../../fleche")

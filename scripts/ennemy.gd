@@ -2,7 +2,7 @@ extends Node2D
 
 var target
 
-var bullet_scene = preload("res://scenes/example.tscn")
+var bullet_scene = preload("res://scenes/projectile.tscn")
 
 func tirer():
 	var bullet_instance = bullet_scene.instantiate()
