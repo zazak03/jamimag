@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtijo7v6bahj7"]
+[gd_scene load_steps=4 format=3 uid="uid://dtijo7v6bahj7"]
 
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
 [ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="2_htwda"]
+[ext_resource type="Script" path="res://scenes/DepCape.gd" id="3_rnk6q"]
 
 [node name="Fleche_complet" type="Node2D"]
 
@@ -10,6 +11,7 @@ script = ExtResource("1_pdq3k")
 
 [node name="DepCape" type="Node2D" parent="fleche"]
 position = Vector2(-50, 0)
+script = ExtResource("3_rnk6q")
 
 [node name="FlecheSprite" type="Sprite2D" parent="fleche"]
 texture = ExtResource("2_htwda")
