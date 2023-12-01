@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://byxgtwjk53b8"]
+[gd_scene load_steps=4 format=3 uid="uid://b6jhhekvfdky3"]
 
-[ext_resource type="PackedScene" uid="uid://quowpsw6adc2" path="res://scenes/fleche.tscn" id="1_gt3it"]
+[ext_resource type="PackedScene" uid="uid://vqd4534aral7" path="res://scenes/fleche.tscn" id="1_gt3it"]
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="2_jss2h"]
 
 [sub_resource type="Curve2D" id="Curve2D_i1xlv"]
