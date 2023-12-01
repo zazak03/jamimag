@@ -1,5 +1,5 @@
 extends Sprite2D
-var speed = 200
+var speed = 400
 var rot_speed = PI/3 + PI/4
 
 # Called when the node enters the scene tree for the first time.
