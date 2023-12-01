@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6jhhekvfdky3"]
+
+[ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="1_cgsyr"]
+[ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="2_jss2h"]
+[ext_resource type="PackedScene" uid="uid://dfa0uqykx8bmq" path="res://scenes/mur.tscn" id="3_2ff00"]
+
+[sub_resource type="Curve2D" id="Curve2D_i1xlv"]
+_data = {
+"points": PackedVector2Array(-44.5675, 0, 44.5675, 0, 553, 387, -31.1132, 56.3401, 31.1132, -56.3401, 712, 282, 100.908, 25.2269, -100.908, -25.2269, 620, 98, 37.8403, -59.7036, -37.8403, 59.7036, 77, 39, -15.1361, -63.0672, 15.1361, 63.0672, 133, 403, -43.7266, -1.68179, 43.7266, 1.68179, 553, 386, 0, 0, 0, 0, 553, 387)
+}
+point_count = 7
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fleche_complet" parent="." instance=ExtResource("1_cgsyr")]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-20, 23)
+curve = SubResource("Curve2D_i1xlv")
+
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("2_jss2h")]
+position = Vector2(553, 387)
+rotates = false
+vitesse = 100.0
+target = NodePath("../../Fleche_complet")
+vitesse_de_tire = 1.0
+
+[node name="mur" parent="." instance=ExtResource("3_2ff00")]
+layer_0/tile_data = PackedInt32Array(65534, 65536, 1, -2, 65536, 1, -65538, 65536, 1, -65537, 65536, 1, -131072, 65536, 1, -131071, 65536, 1, -131070, 65536, 1, -131069, 65536, 1, -131068, 65536, 1, -131067, 65536, 1, -65531, 65536, 1, -65530, 65536, 1, -65529, 65536, 1, -65528, 65536, 1)

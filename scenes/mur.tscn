@@ -4,4 +4,10 @@
 
 [node name="mur" type="TileMap"]
 tile_set = ExtResource("1_5p36w")
+[gd_scene load_steps=2 format=3 uid="uid://dfa0uqykx8bmq"]
+
+[ext_resource type="TileSet" uid="uid://c73e3vbkm6y5l" path="res://others/mur_TileSet.tres" id="1_5ucfn"]
+
+[node name="mur" type="TileMap"]
+tile_set = ExtResource("1_5ucfn")
 format = 2

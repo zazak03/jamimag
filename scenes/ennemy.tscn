@@ -4,12 +4,13 @@
 [ext_resource type="Script" path="res://scripts/ennemy.gd" id="2_j6oky"]
 [ext_resource type="Texture2D" uid="uid://uumaboixvxdw" path="res://assets/sprites/annemy.png" id="3_a2f7s"]
 [ext_resource type="Texture2D" uid="uid://uumaboixvxdw" path="res://assets/sprites/ennemy.png" id="3_a2f7s"]
+[ext_resource type="Texture2D" uid="uid://5lbeg2wfr562" path="res://assets/icon.svg" id="3_56d6m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_a2f7s")
+"texture": ExtResource("3_56d6m")
 }],
 "loop": true,
 "name": &"default",
@@ -56,9 +57,7 @@ script = ExtResource("1_2md5m")
 script = ExtResource("2_j6oky")
 
 [node name="sprite" type="AnimatedSprite2D" parent="ennemy"]
-position = Vector2(0.417449, -1.80257)
-rotation = 5.95686
-scale = Vector2(1, 1)
+rotation = 5.93412
 sprite_frames = SubResource("SpriteFrames_bvip6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ennemy"]
@@ -70,13 +69,12 @@ libraries = {
 blend_times = [&"new_animation", &"new_animation", 0.003]
 
 [node name="shape" type="CollisionPolygon2D" parent="ennemy"]
-visible = false
 polygon = PackedVector2Array(28, -53, 44, 0, 30, 40, -28, 43, -36, -3, -25, -53)
 
 [node name="ennemy_oriantation" type="Node2D" parent="ennemy"]
-position = Vector2(100, 0)
 
 [node name="bullet_start" type="Node2D" parent="ennemy/ennemy_oriantation"]
+position = Vector2(100, 0)
 
 [node name="Timer" type="Timer" parent="ennemy"]
 autostart = true
