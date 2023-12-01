@@ -1,4 +1,5 @@
 extends Node2D
+signal fleche_hit
 var speed = 400
 var rot_speed = PI/3 + PI/4
 
@@ -20,3 +21,7 @@ func _process(delta):
 
 
 	
+
+
+func _on_area_2d_body_entered(body):
+	fleche_hit.emit()

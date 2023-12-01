@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://vqd4534aral7"]
 
-[ext_resource type="Texture2D" path="res://assets/fleche.png" id="1_kt538"]
+[ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="1_kt538"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="2_e58a0"]
 [ext_resource type="Script" path="res://scripts/cameraFleche.gd" id="3_dfcft"]
 
@@ -19,3 +19,5 @@ script = ExtResource("3_dfcft")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-50, 6, -50, 1, 39, 1, 13, -17, 17, -21, 46, 0, 46, 6, 16, 28, 12, 24, 38, 6)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
