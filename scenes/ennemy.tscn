@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/ennemy_follow.gd" id="1_2md5m"]
 [ext_resource type="Script" path="res://scripts/ennemy.gd" id="2_j6oky"]
-[ext_resource type="Texture2D" uid="uid://5lbeg2wfr562" path="res://assets/icon.svg" id="3_56d6m"]
+[ext_resource type="Texture2D" uid="uid://dbbnd3yeuf753" path="res://assets/icon.svg" id="3_56d6m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
@@ -77,4 +77,5 @@ position = Vector2(135, 0)
 [node name="Timer" type="Timer" parent="ennemy"]
 autostart = true
 
+[connection signal="area_entered" from="ennemy" to="." method="_on_ennemy_area_entered"]
 [connection signal="timeout" from="ennemy/Timer" to="ennemy" method="_on_timer_timeout"]

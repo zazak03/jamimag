@@ -43,3 +43,13 @@ func _on_fleche_complet_fleche_hit():
 
 func _on_canvas_layer_start_game():
 	get_tree().paused = false
+
+
+
+
+func _on_ennemy_follow_ennemy_hit():
+	var children = get_children()
+	for child in children:
+		if child is Path2D:
+			child.get_child(0).vitesse_de_tire -= 0.5
+			child.get_child(0).vitesse_de_tire += 20
