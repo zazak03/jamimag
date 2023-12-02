@@ -48,7 +48,7 @@ _data = {
 "new_animation": SubResource("Animation_qgwjv")
 }
 
-[node name="ennemy_follow" type="PathFollow2D"]
+[node name="ennemy_follow" type="PathFollow2D" groups=["ennemis"]]
 script = ExtResource("1_2md5m")
 
 [node name="ennemy" type="Area2D" parent="."]
