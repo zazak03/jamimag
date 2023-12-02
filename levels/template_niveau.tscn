@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_ey851"]
 [ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_lw0q8"]
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_p0nec"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="5_npyq8"]
 
 [sub_resource type="Curve2D" id="Curve2D_viafm"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -37, 67, 0, 0, 0, 0, 75, 219, 0, 0, 0, 0, 206, 142, 0, 0, 0, 0, -37, 67)
+
 }
 point_count = 4
 
@@ -26,6 +28,7 @@ position = Vector2(511, 260)
 level = 1
 
 [node name="Path2D" type="Path2D" parent="."]
+<<<<<<< HEAD
 curve = SubResource("Curve2D_viafm")
 
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("5_npyq8")]
@@ -34,6 +37,14 @@ rotation = 0.93577
 scale = Vector2(0.5, 0.5)
 target = NodePath("../../Fleche_complet")
 vitesse_de_tire = 1.0
+=======
+curve = SubResource("Curve2D_iw864")
+
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("5_d1cxa")]
+position = Vector2(411, 157)
+rotation = -0.87167
+target = NodePath("../../Fleche_complet")
+>>>>>>> 03826d3ba41031657722c7bfd1e338b165a97712
 
 [connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
 [connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
