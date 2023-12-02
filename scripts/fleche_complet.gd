@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var nbr_points_cape = 22
+@export var nbr_points_cape = 35
 @export var update_interval = 0.1
 @export var cape = preload("res://scenes/cape.tscn")
 var points_cape = []
@@ -15,6 +15,7 @@ func _ready():
 		points_cape.push_back(child)
 	$Timer.wait_time = update_interval
 	$Timer.start(0)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +33,4 @@ func update_pos():
 
 func _on_timer_timeout():
 	update_pos()
+

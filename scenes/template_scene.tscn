@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdxy7pkblvo5g"]
+
+[ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="1_813sp"]
+[ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_x06u3"]
+[ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="2_klqat"]
+
+[node name="TemplateScene" type="Node2D"]
+script = ExtResource("1_x06u3")
+
+[node name="Fleche_complet" parent="." instance=ExtResource("1_813sp")]
+
+[node name="cible" parent="." instance=ExtResource("2_klqat")]
+position = Vector2(511, 260)
+
+[node name="DeincrementTimer" type="Timer" parent="."]
+
+[connection signal="cible_atteinte" from="cible" to="." method="_on_cible_cible_atteinte"]
+[connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]

@@ -28,7 +28,7 @@ update_interval = 0.05
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="fleche" type="Area2D" parent="."]
+[node name="fleche" type="Area2D" parent="." groups=["fleche"]]
 script = ExtResource("1_pdq3k")
 
 [node name="DepCape" type="Node2D" parent="fleche"]
