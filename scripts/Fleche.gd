@@ -45,6 +45,8 @@ func decale_cercle(tab):
 
 #Calcule le plus proche voisin du vecteur vector dans le tableau array
 func plus_proche(array, vector:Vector2):
+	if array == []:
+		return Vector2.ZERO
 	var min = vector.distance_to(array[0])
 	var vector_return = array[0]
 	for par_vect in array:
@@ -53,43 +55,53 @@ func plus_proche(array, vector:Vector2):
 			vector_return = par_vect
 	return vector_return
 
-func convert_map_local(vect, body):
-	return get_parent().to_local(body.map_to_local(vect))
+
 
 func convert_cells_local(array, body:TileMap):
 	var array_to_return = []
 	for vect in array:
-		array_to_return.append(convert_map_local(vect, body))
+		array_to_return.append(body.map_to_local(vect))
+	return array_to_return
+
+func garde_cells_voisine_not_empty(array, body:TileMap):
+	var array_to_return = []
+	for vect in array:
+		if body.get_cell_source_id(0,vect) != -1:
+			array_to_return.append(vect)
 	return array_to_return
 
 
-
-func get_dir_collision(body:TileMap):
-	var bout_fleche = get_parent().to_local(position + long_fleche * Vector2.RIGHT.rotated(rotation))
-	var map_bout_fleche = body.local_to_map(get_parent().to_local(bout_fleche))
-	var surrounding_cells_not_converted = body.get_surrounding_cells(map_bout_fleche)
-	var surrounding_cells = convert_cells_local(surrounding_cells_not_converted, body)
-	var pos = plus_proche(surrounding_cells, bout_fleche)
-	var pos_cell_droite = convert_map_local(body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_RIGHT_SIDE), body)
-	var pos_cell_gauche =convert_map_local(body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_LEFT_SIDE), body)
-	var pos_cell_haut = convert_map_local(body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_TOP_SIDE), body)
-	var pos_cell_bas = convert_map_local(body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE), body)
-	if pos == pos_cell_bas and body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_BOTTOM_SIDE) != body.INVALID_CELL:
-		return Vector2.UP
-	if pos == pos_cell_haut and body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_TOP_SIDE) != body.INVALID_CELL:
+func get_dir_vect_normal(body:TileMap):
+	var bout_fleche = position + long_fleche * Vector2.RIGHT.rotated(rotation)
+	var bout_fleche_map = body.local_to_map(bout_fleche)
+	var cells_voisines_raw_map = body.get_surrounding_cells(bout_fleche_map)
+	var cells_voisine_map = garde_cells_voisine_not_empty(cells_voisines_raw_map, body)
+	var cells_voisine_locale = convert_cells_local(cells_voisine_map, body)
+	var pos = plus_proche(cells_voisine_locale, bout_fleche)
+	var pos_haut = body.map_to_local(body.get_neighbor_cell(bout_fleche_map, TileSet.CELL_NEIGHBOR_TOP_SIDE))
+	var pos_bas = body.map_to_local(body.get_neighbor_cell(bout_fleche_map, TileSet.CELL_NEIGHBOR_BOTTOM_SIDE))
+	var pos_droite = body.map_to_local(body.get_neighbor_cell(bout_fleche_map, TileSet.CELL_NEIGHBOR_RIGHT_SIDE))
+	var pos_gauche = body.map_to_local(body.get_neighbor_cell(bout_fleche_map, TileSet.CELL_NEIGHBOR_LEFT_SIDE))
+	if pos == pos_haut:
 		return Vector2.DOWN
-	if pos == pos_cell_droite and body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_RIGHT_SIDE) != body.INVALID_CELL:
+	if pos == pos_bas:
+		return Vector2.UP
+	if pos == pos_droite:
 		return Vector2.LEFT
-	if pos == pos_cell_gauche and body.get_neighbor_cell(map_bout_fleche,TileSet.CELL_NEIGHBOR_LEFT_SIDE) != body.INVALID_CELL:
+	if pos == pos_gauche:
 		return Vector2.RIGHT
+	return Vector2.ZERO
+
+
 
 
 
 func _on_body_entered(body):
 	if body.is_in_group("mur"):
-		var vect_normal = get_dir_collision(body)
-		var vect_bounced = Vector2.RIGHT.rotated(rotation).bounce(vect_normal)
-		rotation = vect_bounced.angle()
+		var vect_normal = get_dir_vect_normal(body)
+		if vect_normal != Vector2.ZERO:
+			var vect_bounced = Vector2.RIGHT.rotated(rotation).bounce(vect_normal)
+			rotation = vect_bounced.angle()
 	if body.is_in_group("projectiles") or body.is_in_group("ennemis"):
 		print("Touché !")
 		Fleche_hit.emit()
