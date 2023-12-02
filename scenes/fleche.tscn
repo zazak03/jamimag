@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8m1cyrhv65yc"]
 
-[ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="1_kt538"]
+[ext_resource type="Texture2D" uid="uid://df4m40pbf1ax3" path="res://assets/fleche.png" id="1_kt538"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="2_e58a0"]
 
 [node name="fleche" type="Node2D"]

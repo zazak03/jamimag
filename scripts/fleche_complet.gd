@@ -44,4 +44,5 @@ func _on_fleche_fleche_hit():
 
 func _on_fleche_area_entered(area):
 	if area.is_in_group("projectile"):
+		print("Touché")
 		fleche_hit.emit()

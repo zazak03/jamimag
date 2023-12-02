@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="1_cgsyr"]
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="2_jss2h"]
-[ext_resource type="PackedScene" uid="uid://dfa0uqykx8bmq" path="res://scenes/mur.tscn" id="3_2ff00"]
+[ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="3_2ff00"]
 
 [sub_resource type="Curve2D" id="Curve2D_i1xlv"]
 _data = {
@@ -21,7 +21,6 @@ curve = SubResource("Curve2D_i1xlv")
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("2_jss2h")]
 position = Vector2(553, 387)
 rotates = false
-vitesse = 100.0
 target = NodePath("../../Fleche_complet")
 vitesse_de_tire = 1.0
 

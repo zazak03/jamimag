@@ -8,7 +8,7 @@ func tirer():
 	var bullet_instance = bullet_scene.instantiate()
 	$ennemy_oriantation.global_rotation = 0
 	$ennemy_oriantation.rotate(get_angle_to(target.global_position))
-	add_child(bullet_instance)
+	$"../../".add_child(bullet_instance)
 	bullet_instance.global_position = $ennemy_oriantation/bullet_start.global_position
 	bullet_instance.global_rotation = $ennemy_oriantation.global_rotation + PI/2
 	

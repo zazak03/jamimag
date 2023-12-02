@@ -5,6 +5,8 @@ var screen_size
 
 signal bullet_destroyed
 signal bullet_ricochet
+var act_rebond = true
+
 
 func _init():
 	pass
@@ -30,5 +32,12 @@ func _on_body_entered(body):
 
 func _on_area_entered(area):
 	if area.is_in_group("cape"):
-		rotation = PI + rotation
-		bullet_ricochet.emit()
+		if act_rebond:
+			rotation = PI + rotation
+			$DesactCollisionRebond.start()
+			act_rebond = false
+			bullet_ricochet.emit()
+
+
+func _on_desact_collision_rebond_timeout():
+	act_rebond = true

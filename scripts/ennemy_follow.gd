@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-@export var vitesse:float = 10
+@export var vitesse:float = 100
 @export var target:Node
 @export var vitesse_de_tire:float = 10
 
