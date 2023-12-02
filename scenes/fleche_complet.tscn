@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtijo7v6bahj7"]
+[gd_scene load_steps=5 format=3 uid="uid://dtijo7v6bahj7"]
 
-[ext_resource type="Script" path="res://fleche_complet.gd" id="1_chhpv"]
+[ext_resource type="Script" path="res://scripts/fleche_complet.gd" id="1_filkd"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
 [ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="2_htwda"]
 
@@ -20,7 +20,7 @@ func _process(delta):
 "
 
 [node name="Fleche_complet" type="Node2D"]
-script = ExtResource("1_chhpv")
+script = ExtResource("1_filkd")
 nbr_points_cape = 35
 update_interval = 0.05
 
