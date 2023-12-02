@@ -37,23 +37,51 @@ func decale(val, tabl):
 func decale2(val, tab):
 	tab.push_front(val)
 	tab.pop_back()
-
+#ne sait pas si utile
 func decale_cercle(tab):
 	var tampon = tab[0]
 	decale2(tampon, tab)
 
+#Calcule le plus proche voisin du vecteur vector dans le tableau array
+func plus_proche(array, vector:Vector2):
+	var min = vector.distance_to(array[0])
+	for par_vect in array:
+		if min > vector.distance_to(par_vect):
+			min = vector.distance_to(par_vect)
+	return min
 
-#CLE: Fonction qui s'occupe de décaler tous les points de la cape
-#Pour Tristan : il faut que tu mette DepCape dans la scène principale, de manière à ce qu'elle suive
-#la position de fleche mais n'hérite pas de sa rotation 
+	
 
-	#derniers_vect_pos = derniers_vect_pos.map(func(vector2):return vector2 - position.normalized()*ecart_points)
-	#for i in range(depart_cape.get_child_count()):
-	#	depart_cape.get_child(i).position = derniers_vect_pos[i]
-		
+func _on_body_entered_mur(body: TileMap):
+	print("mur")
+	var surrounding_cells = body.get_surrounding_cells(position)
+	var pos = plus_proche(surrounding_cells, position)
+	var vector =  Vector2.ZERO
+	if pos == body.get_neighbor_cell(pos, 0) or pos == body.get_neighbor_cell(pos, 8):
+		vector = Vector2.DOWN
+	if pos == body.get_neighbor_cell(pos, 4) or pos == body.get_neighbor_cell(pos, 12):
+		vector= Vector2.RIGHT
+	var vector_bounced = position.bounce(vector)
+	rotation = vector_bounced.angle()
 
 
 
-func _on_body_entered(body):
-	Fleche_hit.emit()
-	$FlecheHitbox.set_deferred("disabled", true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

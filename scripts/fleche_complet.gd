@@ -28,8 +28,6 @@ func _physics_process(delta):
 func update_pos():
 	points_cape.push_front(points_cape.pop_back())
 	points_cape[1].position = $fleche.position
-	print(points_cape[1].global_position)
-	print($fleche/Camera.global_position)
 
 
 func _on_timer_timeout():
