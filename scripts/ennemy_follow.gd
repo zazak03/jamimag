@@ -9,7 +9,7 @@ func _ready():
 	$ennemy.target = target
 	$ennemy/Timer.wait_time = vitesse_de_tire
 	$ennemy/Timer.start(0)
-	pass # Replace with function body.
+	$ennemy.global_rotation = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
