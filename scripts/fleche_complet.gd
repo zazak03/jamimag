@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var nbr_points_cape = 22
+@export var nbr_points_cape = 35
 @export var update_interval = 0.1
 @export var cape = preload("res://scenes/cape.tscn")
 var points_cape = []
@@ -17,6 +17,7 @@ func _ready():
 	$Timer.start(0)
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -28,9 +29,10 @@ func _physics_process(delta):
 func update_pos():
 	points_cape.push_front(points_cape.pop_back())
 	points_cape[1].position = $fleche.position
-	print(points_cape[1].global_position)
-	print($fleche/Camera.global_position)
+	#print(points_cape[1].global_position)
+	#print($fleche/Camera.global_position)
 
 
 func _on_timer_timeout():
 	update_pos()
+
