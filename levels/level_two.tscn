@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnycjv65k2w48"]
+[gd_scene load_steps=8 format=3 uid="uid://cnycjv65k2w48"]
 
 [ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_w2fr3"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_x4vgi"]
 [ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_4unsf"]
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_slapg"]
 [ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="5_aqqfr"]
+[ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="6_bglr8"]
+
+[sub_resource type="Curve2D" id="Curve2D_so4ef"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1353, 149, 0, 0, 0, 0, 1363, -150, 0, 0, 0, 0, 1347, -154, 0, 0, 0, 0, 1344, 144, 0, 0, 0, 0, 1353, 149)
+}
+point_count = 5
 
 [node name="TemplateScene" type="Node2D"]
 script = ExtResource("1_w2fr3")
@@ -12,7 +19,7 @@ script = ExtResource("1_w2fr3")
 [node name="Fleche_complet" parent="." instance=ExtResource("2_x4vgi")]
 
 [node name="cible" parent="." instance=ExtResource("3_4unsf")]
-position = Vector2(1683, -88)
+position = Vector2(1578, 0)
 
 [node name="DeincrementTimer" type="Timer" parent="."]
 
@@ -20,8 +27,16 @@ position = Vector2(1683, -88)
 level = 2
 
 [node name="mur" parent="." instance=ExtResource("5_aqqfr")]
-position = Vector2(0, -39)
-layer_0/tile_data = PackedInt32Array(65534, 131072, 1, -1, 65536, 2, -65536, 65536, 2, -65535, 65536, 2, -65534, 65536, 2, 3, 0, 1, 65539, 0, 1, 131076, 65536, 2, 131077, 65536, 2, 65542, 131072, 1, 6, 131072, 1, -65530, 131072, 1, -131066, 131072, 1, -196602, 131072, 1, -262139, 65536, 0, -262140, 65536, 0, -262141, 65536, 0, -327678, 131072, 1, -393214, 131072, 1, -458750, 131072, 1, -524286, 131072, 1, -589821, 65536, 2, -589820, 65536, 2, -589819, 65536, 2, -589818, 65536, 2, -589817, 65536, 2, -589816, 65536, 2, -589815, 65536, 2, -589814, 65536, 2, -262138, 131072, 0, -262142, 65536, 1, -65533, 65536, 1, 131075, 0, 2, 131078, 131072, 2, -589813, 65536, 1, -589822, 65536, 1, 131070, 65536, 1, -2, 65536, 1, 196606, 65536, 1, 262142, 65536, 1, 262143, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327681, 65536, 1, 327682, 65536, 1, 327683, 65536, 1, 327684, 65536, 1, 327685, 65536, 1, 327686, 65536, 1, 327687, 65536, 1, 327688, 65536, 1, 327689, 65536, 1, 327680, 65536, 1, 262153, 65536, 1, 196617, 65536, 1, 131081, 65536, 1, 65545, 65536, 1, 9, 65536, 1, -65527, 65536, 1, -131063, 65536, 1, -196599, 65536, 1, -262135, 65536, 1, -327671, 65536, 1, -589812, 65536, 1, -589811, 65536, 1, -589810, 65536, 1, -589809, 65536, 1, -589808, 65536, 1, -524272, 65536, 1, -524271, 65536, 1, -458735, 65536, 1, -393199, 65536, 1, -327663, 65536, 1, -327664, 65536, 1, -327665, 65536, 1, -327666, 65536, 1, -327667, 65536, 1, -327668, 65536, 1, -262132, 65536, 1, -262131, 65536, 1, -262130, 65536, 1, -196594, 65536, 1, -196592, 65536, 1, -196591, 65536, 1, -131054, 65536, 1, -65517, 65536, 1, 19, 65536, 1, -196593, 65536, 1, -196590, 65536, 1, -131053, 65536, 1, 65555, 65536, 1, 65554, 65536, 1, 65553, 65536, 1, 65552, 65536, 1, 65551, 65536, 1, 65550, 65536, 1, 65549, 65536, 1, 65548, 65536, 1, 65547, 65536, 1, 65546, 65536, 1)
+layer_0/tile_data = PackedInt32Array(-131073, 65536, 2, -196608, 65536, 2, -196607, 65536, 2, -196606, 65536, 2, -196605, 65536, 2, -196604, 65536, 2, -196603, 65536, 2, -196602, 65536, 2, -196601, 65536, 2, -196600, 65536, 2, -196599, 65536, 2, -196598, 65536, 2, -196597, 65536, 2, -196596, 65536, 2, -196595, 65536, 2, -196594, 65536, 2, -196593, 65536, 2, -196592, 65536, 2, -196591, 65536, 2, -131054, 0, 1, -65518, 0, 1, 18, 0, 1, 65554, 0, 1, 131089, 65536, 0, 131088, 65536, 0, 131087, 65536, 0, 131086, 65536, 0, 131085, 65536, 0, 131084, 65536, 0, 131083, 65536, 0, 131082, 65536, 0, 131081, 65536, 0, 131080, 65536, 0, 131079, 65536, 0, 131078, 65536, 0, 131077, 65536, 0, 131076, 65536, 0, 131075, 65536, 0, 131074, 65536, 0, 131073, 65536, 0, 131072, 65536, 0, 196607, 65536, 0, 131070, 131072, 1, 65534, 131072, 1, -2, 131072, 1, -65538, 131072, 1, 196606, 65536, 1, -131074, 65536, 1, -196590, 65536, 1, 131090, 65536, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_so4ef")
+
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("6_bglr8")]
+position = Vector2(1353, 149)
+rotation = -1.53736
+target = NodePath("../../Fleche_complet")
+vitesse_de_tire = 2.0
 
 [connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
 [connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]

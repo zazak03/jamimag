@@ -61,7 +61,6 @@ func _on_next_level_button_pressed():
 	get_tree().change_scene_to_packed(next)
 
 
-
 func _on_template_scene_updatehud(score, mul, kills):
 	update_score(score)
 	update_mul(mul)

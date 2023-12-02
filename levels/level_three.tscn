@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dw0qc1e27vur7"]
+
+[ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_76o46"]
+[ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_2fj4y"]
+[ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_0dsr5"]
+[ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_6jok2"]
+[ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="5_5gm6b"]
+[ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="6_2xcwq"]
+
+[sub_resource type="Curve2D" id="Curve2D_a820j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 728, 165, 0, 0, 0, 0, 688, 296, 0, 0, 0, 0, 999, 180, 0, 0, 0, 0, 728, 165)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_ithby"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 676, -254, 0, 0, 0, 0, 1016, -129, 0, 0, 0, 0, 720, -97, 0, 0, 0, 0, 676, -254)
+}
+point_count = 4
+
+[node name="TemplateScene" type="Node2D"]
+script = ExtResource("1_76o46")
+
+[node name="Fleche_complet" parent="." instance=ExtResource("2_2fj4y")]
+
+[node name="cible" parent="." instance=ExtResource("3_0dsr5")]
+position = Vector2(873, 2)
+
+[node name="DeincrementTimer" type="Timer" parent="."]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_6jok2")]
+level = 3
+
+[node name="mur" parent="." instance=ExtResource("6_2xcwq")]
+layer_0/tile_data = PackedInt32Array(-262145, 65536, 2, -327680, 65536, 2, -327679, 65536, 2, -327678, 65536, 2, -327677, 65536, 2, -327676, 65536, 2, -327675, 65536, 2, -327674, 65536, 2, -327673, 65536, 2, -327672, 65536, 2, -327671, 65536, 2, -327670, 65536, 2, -262146, 65536, 2, -131076, 131072, 1, -65540, 131072, 1, -4, 131072, 1, 131068, 131072, 1, 196604, 131072, 1, 262140, 131072, 1, -196612, 131072, 1, 65532, 131072, 1, 327677, 65536, 0, 327678, 65536, 0, 327679, 65536, 0, 262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, 262148, 65536, 0, 262149, 65536, 0, 262150, 65536, 0, 262151, 65536, 0, 262152, 65536, 0, 262153, 65536, 0, 262154, 65536, 0, 196619, 0, 1, 131083, 0, 1, 11, 0, 1, -65525, 0, 1, -196597, 0, 1, -262133, 0, 1, -131061, 0, 1, 262155, 65536, 1, -327669, 65536, 1, -262148, 65536, 1, 327676, 65536, 1, -262147, 65536, 2, 65547, 0, 1)
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_a820j")
+
+[node name="ennemy_follow" parent="Path2D2" instance=ExtResource("5_5gm6b")]
+position = Vector2(728, 165)
+rotation = 1.86715
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ithby")
+
+[node name="ennemy_follow" parent="Path2D" instance=ExtResource("5_5gm6b")]
+position = Vector2(676, -254)
+rotation = 0.352309
+
+[connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
+[connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
+[connection signal="fleche_hit" from="Fleche_complet" to="CanvasLayer" method="_on_fleche_complet_fleche_hit"]
+[connection signal="cible_atteinte" from="cible" to="." method="_on_cible_cible_atteinte"]
+[connection signal="cible_atteinte" from="cible" to="CanvasLayer" method="_on_cible_cible_atteinte"]
+[connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]
+[connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
