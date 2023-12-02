@@ -1,5 +1,5 @@
 extends PathFollow2D
-
+signal ennemy_hit
 @export var vitesse:float = 100
 @export var target:Node
 @export var vitesse_de_tire:float = 10
@@ -14,3 +14,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	progress += delta*vitesse
+
+
+
+func _on_ennemy_area_entered(area):
+	ennemy_hit.emit()
+	queue_free()

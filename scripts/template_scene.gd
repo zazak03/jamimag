@@ -3,9 +3,11 @@ extends Node2D
 var kills = 0
 var score = 0
 var mul = 0
-@export var score_temporel = 1000
+@export var score_temporel_max = 1000
 @export var deincrement_ratio = 100
 @export var points_par_proj = 100
+
+@onready var score_temporel = score_temporel_max
 
 signal updatehud(score, mul, kills)
 
@@ -41,3 +43,13 @@ func _on_fleche_complet_fleche_hit():
 
 func _on_canvas_layer_start_game():
 	get_tree().paused = false
+
+
+
+
+func _on_ennemy_follow_ennemy_hit():
+	var children = get_children()
+	for child in children:
+		if child is Path2D:
+			child.get_child(0).vitesse_de_tire -= 0.5
+			child.get_child(0).vitesse_de_tire += 20

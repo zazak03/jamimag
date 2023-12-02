@@ -98,6 +98,7 @@ func get_dir_vect_normal(body:TileMap):
 
 func _on_body_entered(body):
 	if body.is_in_group("mur"):
+		print("c'est un mur")
 		var vect_normal = get_dir_vect_normal(body)
 		if vect_normal != Vector2.ZERO:
 			var vect_bounced = Vector2.RIGHT.rotated(rotation).bounce(vect_normal)
