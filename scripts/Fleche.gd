@@ -66,25 +66,3 @@ func _on_body_entered(body):
 	if body.is_in_group("projectiles") or body.is_in_group("ennemis"):
 		print("Touché !")
 		Fleche_hit.emit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

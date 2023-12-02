@@ -8,7 +8,6 @@ radius = 5.0
 [node name="PointCape" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.085, 0.085)
 texture = ExtResource("1_mt6jx")
 
 [node name="hitboxUnit" type="CollisionShape2D" parent="."]
