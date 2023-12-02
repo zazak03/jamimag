@@ -1,11 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtijo7v6bahj7"]
+[gd_scene load_steps=5 format=3 uid="uid://dtijo7v6bahj7"]
 
-[ext_resource type="Script" path="res://fleche_complet.gd" id="1_chhpv"]
+[ext_resource type="Script" path="res://scripts/fleche_complet.gd" id="1_filkd"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
-[ext_resource type="Texture2D" uid="uid://chynbr4eu8sig" path="res://assets/fleche.png" id="2_htwda"]
+[ext_resource type="Texture2D" uid="uid://df4m40pbf1ax3" path="res://assets/fleche.png" id="2_htwda"]
+
+[sub_resource type="GDScript" id="GDScript_t2luu"]
+script/source = "extends Node2D
+var parent_rotation
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	parent_rotation = get_parent().rotation
+	rotation = - parent_rotation
+"
 
 [node name="Fleche_complet" type="Node2D"]
-script = ExtResource("1_chhpv")
+script = ExtResource("1_filkd")
 nbr_points_cape = 35
 update_interval = 0.05
 
@@ -15,6 +30,10 @@ update_interval = 0.05
 
 [node name="fleche" type="Area2D" parent="."]
 script = ExtResource("1_pdq3k")
+
+[node name="DepCape" type="Node2D" parent="fleche"]
+position = Vector2(-50, 0)
+script = SubResource("GDScript_t2luu")
 
 [node name="FlecheSprite" type="Sprite2D" parent="fleche"]
 position = Vector2(49.8, -0.299999)
