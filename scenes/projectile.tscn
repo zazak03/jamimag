@@ -31,8 +31,5 @@ sprite_frames = SubResource("SpriteFrames_uxdfl")
 position = Vector2(2, 25)
 shape = SubResource("CapsuleShape2D_p0e6k")
 
-[node name="DesactCollisionRebond" type="Timer" parent="."]
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="DesactCollisionRebond" to="." method="_on_desact_collision_rebond_timeout"]

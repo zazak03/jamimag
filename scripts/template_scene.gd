@@ -3,9 +3,11 @@ extends Node2D
 var kills = 0
 var score = 0
 var mul = 0
-@export var score_temporel = 1000
+@export var score_temporel_max = 1000
 @export var deincrement_ratio = 100
 @export var points_par_proj = 100
+
+@onready var score_temporel = score_temporel_max
 
 signal updatehud(score, mul, kills)
 
