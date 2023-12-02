@@ -52,17 +52,20 @@ func plus_proche(array, vector:Vector2):
 
 	
 
-func _on_body_entered_mur(body: TileMap):
-	print("mur")
-	var surrounding_cells = body.get_surrounding_cells(position)
-	var pos = plus_proche(surrounding_cells, position)
-	var vector =  Vector2.ZERO
-	if pos == body.get_neighbor_cell(pos, 0) or pos == body.get_neighbor_cell(pos, 8):
-		vector = Vector2.DOWN
-	if pos == body.get_neighbor_cell(pos, 4) or pos == body.get_neighbor_cell(pos, 12):
-		vector= Vector2.RIGHT
-	var vector_bounced = position.bounce(vector)
-	rotation = vector_bounced.angle()
+func _on_body_entered(body):
+	if body.is_in_group("mur"):
+		var surrounding_cells = body.get_surrounding_cells(position)
+		var pos = plus_proche(surrounding_cells, position)
+		var vector =  Vector2.ZERO
+		if pos == body.get_neighbor_cell(pos, 0) or pos == body.get_neighbor_cell(pos, 8):
+			vector = Vector2.DOWN
+		if pos == body.get_neighbor_cell(pos, 4) or pos == body.get_neighbor_cell(pos, 12):
+			vector= Vector2.RIGHT
+		var vector_bounced = position.bounce(vector)
+		rotation = vector_bounced.angle()
+	if body.is_in_group("projectiles") or body.is_in_group("ennemis"):
+		print("Touché !")
+		Fleche_hit.emit()
 
 
 
