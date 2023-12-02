@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnycjv65k2w48"]
+[gd_scene load_steps=6 format=3 uid="uid://cnycjv65k2w48"]
 
 [ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_w2fr3"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_x4vgi"]
 [ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_4unsf"]
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_slapg"]
-[ext_resource type="PackedScene" uid="uid://dfsugbk1ytijl" path="res://levels/level_one.tscn" id="5_3riom"]
 [ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="5_aqqfr"]
 
 [node name="TemplateScene" type="Node2D"]
@@ -18,7 +17,6 @@ position = Vector2(1683, -88)
 [node name="DeincrementTimer" type="Timer" parent="."]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_slapg")]
-next = ExtResource("5_3riom")
 level = 2
 
 [node name="mur" parent="." instance=ExtResource("5_aqqfr")]
