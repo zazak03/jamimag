@@ -7,6 +7,8 @@ var points_cape = []
 var derniers_vect_pos = []
 @onready var ma_var = $fleche
 
+signal fleche_hit
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(nbr_points_cape):
@@ -34,3 +36,12 @@ func update_pos():
 func _on_timer_timeout():
 	update_pos()
 
+
+
+func _on_fleche_fleche_hit():
+	fleche_hit.emit()
+
+
+func _on_fleche_area_entered(area):
+	if area.is_in_group("projectile"):
+		fleche_hit.emit()

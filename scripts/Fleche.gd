@@ -103,5 +103,4 @@ func _on_body_entered(body):
 			var vect_bounced = Vector2.RIGHT.rotated(rotation).bounce(vect_normal)
 			rotation = vect_bounced.angle()
 	if body.is_in_group("projectiles") or body.is_in_group("ennemis"):
-		print("Touché !")
 		Fleche_hit.emit()

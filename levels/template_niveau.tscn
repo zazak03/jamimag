@@ -16,7 +16,7 @@ position = Vector2(511, 260)
 [node name="DeincrementTimer" type="Timer" parent="."]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_p0nec")]
-level = 5
+level = 1
 
 [connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
 [connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
