@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-#@export var next = preload("res://levels/..;")
+@export var next:PackedScene
 
 @export var level = 0
 
@@ -59,8 +59,7 @@ func _on_retry_button_pressed():
 
 
 func _on_next_level_button_pressed():
-	#get_tree().change_scene_to_packed(next)
-	pass # Replace with function body.
+	get_tree().change_scene_to_packed(next)
 
 
 func _on_template_scene_updatehud(score, mul, kills):
