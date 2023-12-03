@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cin6f7tcatdft"]
+
+[ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_qcs7s"]
+[ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_o8yvy"]
+[ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_8da1j"]
+[ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_067qs"]
+[ext_resource type="PackedScene" uid="uid://cuirv8gek48kn" path="res://levels/level_five.tscn" id="5_1lh3u"]
+[ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="5_3cp86"]
+[ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="6_gi15n"]
+
+[sub_resource type="Curve2D" id="Curve2D_2vpub"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 975, -51, 0, 0, 0, 0, 969, 115)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_mfr3m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 731, -113, 0, 0, 0, 0, 120, -113, 0, 0, 0, 0, -869, -102)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_nvm1b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 740, 129, 0, 0, 0, 0, 175, 127, 0, 0, 0, 0, -880, 99)
+}
+point_count = 3
+
+[node name="TemplateScene" type="Node2D"]
+script = ExtResource("1_qcs7s")
+
+[node name="Fleche_complet" parent="." instance=ExtResource("2_o8yvy")]
+
+[node name="cible" parent="." instance=ExtResource("3_8da1j")]
+position = Vector2(-1072, 2)
+
+[node name="DeincrementTimer" type="Timer" parent="."]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_067qs")]
+next = ExtResource("5_1lh3u")
+level = 4
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2vpub")
+
+[node name="ennemy_follow" parent="Path2D3" node_paths=PackedStringArray("target") instance=ExtResource("5_3cp86")]
+position = Vector2(975, -51)
+rotation = 1.60693
+vitesse = 200.0
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 1.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_mfr3m")
+
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("5_3cp86")]
+position = Vector2(731, -113)
+rotation = 3.14159
+vitesse = 200.0
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 1.0
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nvm1b")
+
+[node name="ennemy_follow" parent="Path2D2" node_paths=PackedStringArray("target") instance=ExtResource("5_3cp86")]
+position = Vector2(740, 129)
+rotation = -3.13805
+vitesse = 200.0
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 1.0
+
+[node name="mur" parent="." instance=ExtResource("6_gi15n")]
+layer_0/tile_data = PackedInt32Array(-131075, 65536, 2, -131074, 65536, 2, -131073, 65536, 2, -196608, 65536, 2, -196607, 65536, 2, -196606, 65536, 2, -196603, 65536, 2, -196602, 65536, 2, -196601, 65536, 2, -196600, 65536, 2, -196599, 65536, 2, -196598, 65536, 2, -196605, 65536, 2, -196604, 65536, 2, -131061, 0, 1, -65525, 0, 1, 11, 0, 1, 65547, 0, 1, 131082, 65536, 0, 131081, 65536, 0, 131080, 65536, 0, 131079, 65536, 0, 131078, 65536, 0, 131077, 65536, 0, 131076, 65536, 0, 131075, 65536, 0, 131074, 65536, 0, 131073, 65536, 0, 131072, 65536, 0, 196607, 65536, 0, 196606, 65536, 0, 196605, 65536, 0, 196604, 65536, 0, 196603, 65536, 0, 196602, 65536, 0, 196601, 65536, 0, -131076, 65536, 2, -131077, 65536, 2, -131078, 65536, 2, -131079, 65536, 2, -131080, 65536, 2, 131083, 65536, 1, -196597, 65536, 1, 196595, 65536, 1, -131085, 65536, 1, 196600, 65536, 0, 196599, 65536, 0, 196598, 65536, 0, 196597, 65536, 0, 196596, 65536, 0, 131059, 131072, 1, 65523, 131072, 1, -13, 131072, 1, -65549, 131072, 1, -131084, 65536, 2, -131083, 65536, 2, -131082, 65536, 2, -131081, 65536, 2)
+
+[connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
+[connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
+[connection signal="fleche_hit" from="Fleche_complet" to="CanvasLayer" method="_on_fleche_complet_fleche_hit"]
+[connection signal="cible_atteinte" from="cible" to="." method="_on_cible_cible_atteinte"]
+[connection signal="cible_atteinte" from="cible" to="CanvasLayer" method="_on_cible_cible_atteinte"]
+[connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]
+[connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
+
+[editable path="Fleche_complet"]

@@ -10,6 +10,7 @@ func _ready():
 	$LevelLabel.text = str(level)
 	$RetryButton.hide()
 	$NextLevelButton.hide()
+	$ScoreLabel.text = "Score :"
 
 func show_message(text):
 	$LevelLabel.text = str(level)
@@ -31,7 +32,7 @@ func update_score(score):
 
 func update_mul(mul):
 	if mul != 0 :
-		$MulLabel.show()
+		#$MulLabel.show()
 		$MulLabel.text = "x" + str(mul)
 	else :
 		$MulLabel.hide()

@@ -18,12 +18,14 @@ theme_override_font_sizes/font_size = 40
 text = "This is your level"
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 40
 text = "This is your score"
 
 [node name="KillsLabel" type="Label" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
