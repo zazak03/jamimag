@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://0esgngfl4gg0"]
+[gd_scene load_steps=7 format=3 uid="uid://0esgngfl4gg0"]
 
 [ext_resource type="Script" path="res://scripts/ennemy_follow.gd" id="1_2md5m"]
 [ext_resource type="Script" path="res://scripts/ennemy.gd" id="2_j6oky"]
-[ext_resource type="Texture2D" uid="uid://523w27lmkwya" path="res://assets/tank_true.png" id="3_x0dwb"]
+[ext_resource type="Texture2D" uid="uid://t4bll2476446" path="res://assets/tank_true.png" id="3_x0dwb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
@@ -49,7 +49,6 @@ _data = {
 }
 
 [node name="ennemy_follow" type="PathFollow2D" groups=["ennemis"]]
-rotates = false
 script = ExtResource("1_2md5m")
 
 [node name="ennemy" type="Area2D" parent="." groups=["ennemi"]]
@@ -76,12 +75,7 @@ polygon = PackedVector2Array(28, -53, 44, 0, 30, 40, -28, 43, -36, -3, -25, -53)
 [node name="bullet_start" type="Node2D" parent="ennemy/ennemy_oriantation"]
 position = Vector2(135, 0)
 
-[node name="debug" type="Sprite2D" parent="ennemy/ennemy_oriantation"]
-position = Vector2(135, 0)
-texture = ExtResource("4_b374i")
-
 [node name="Timer" type="Timer" parent="ennemy"]
 autostart = true
 
-[connection signal="area_entered" from="ennemy" to="." method="_on_ennemy_area_entered"]
 [connection signal="timeout" from="ennemy/Timer" to="ennemy" method="_on_timer_timeout"]

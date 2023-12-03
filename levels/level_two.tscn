@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=8 format=3 uid="uid://cnycjv65k2w48"]
-=======
 [gd_scene load_steps=9 format=3 uid="uid://8w3pd6v02gu0"]
->>>>>>> 41149e9b03e6b317f94945a4be9cbc68c3af6304
 
 [ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_w2fr3"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_x4vgi"]
