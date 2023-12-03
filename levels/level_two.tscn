@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://8w3pd6v02gu0"]
+[gd_scene load_steps=9 format=3 uid="uid://mtcdt1ekkb0y"]
 
 [ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_w2fr3"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_x4vgi"]
 [ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_4unsf"]
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_slapg"]
 [ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="5_aqqfr"]
-[ext_resource type="PackedScene" uid="uid://dac3w6u407ejt" path="res://levels/level_three.tscn" id="5_dwycr"]
+[ext_resource type="PackedScene" uid="uid://co1rth2wdrntb" path="res://levels/level_three.tscn" id="5_dwycr"]
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="6_bglr8"]
 
 [sub_resource type="Curve2D" id="Curve2D_so4ef"]
@@ -36,7 +36,6 @@ curve = SubResource("Curve2D_so4ef")
 
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("6_bglr8")]
 position = Vector2(1353, 149)
-rotation = -1.53736
 target = NodePath("../../Fleche_complet/fleche")
 vitesse_de_tire = 5.0
 

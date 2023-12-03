@@ -13,6 +13,10 @@ signal updatehud(score, mul, kills)
 
 func _ready():
 	get_tree().paused = true
+	var children = get_children()
+	for child in children:
+		if child.is_in_group("projectile"):
+			child.queue_free()
 
 func _process(delta):
 	emit_signal("updatehud", score, mul, kills)
