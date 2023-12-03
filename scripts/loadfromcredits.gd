@@ -1,8 +1,14 @@
 extends Node2D
 
 
-@export var worstlevel:PackedScene
-@export var modesurvie:PackedScene
+var worstlevel:PackedScene
+var modesurvie:PackedScene
+
+
+func _ready():
+	worstlevel = preload("res://levels/level_five_ancien.tscn")
+	modesurvie = preload("res://levels/survival_mode.tscn")
+
 
 func _on_worst_pressed():
 	get_tree().change_scene_to_packed(worstlevel)
