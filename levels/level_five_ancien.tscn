@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://daryauji2kutm"]
+
+[ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_vkkib"]
+[ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_ykjwq"]
+[ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_tuyst"]
+[ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_j7pi3"]
+[ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="5_0ec7e"]
+[ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="5_ebkpv"]
+[ext_resource type="PackedScene" uid="uid://ghn66e5oxxao" path="res://levels/credits.tscn" id="5_ffdq0"]
+
+[sub_resource type="Curve2D" id="Curve2D_tbitd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 440, -294, 0, 0, 0, 0, 2354, -291, 0, 0, 0, 0, 1413, -356, 0, 0, 0, 0, 440, -294)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_5s1mv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2521, 1066, 0, 0, 0, 0, 2575, 1660, 0, 0, 0, 0, 2185, 1655, 0, 0, 0, 0, 2425, 1493, 0, 0, 0, 0, 2510, 1063, 0, 0, 0, 0, 2521, 1066)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_4grwm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1082, 1614, 0, 0, 0, 0, 881, 1575, 0, 0, 0, 0, 911, 1081, 0, 0, 0, 0, 956, 1515, 0, 0, 0, 0, 1082, 1614)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_7xp41"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1079, 104, 0, 0, 0, 0, 2101, 77, 0, 0, 0, 0, 2122, 1204, 0, 0, 0, 0, 2071, 113, 0, 0, 0, 0, 1079, 104)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_nvke7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1506, 546, 0, 0, 0, 0, 1503, 461, 0, 0, 0, 0, 1543, 512, 0, 0, 0, 0, 1506, 546)
+}
+point_count = 4
+
+[node name="TemplateScene" type="Node2D"]
+script = ExtResource("1_vkkib")
+
+[node name="Fleche_complet" parent="." instance=ExtResource("2_ykjwq")]
+
+[node name="cible" parent="." instance=ExtResource("3_tuyst")]
+position = Vector2(1681, 789)
+
+[node name="DeincrementTimer" type="Timer" parent="."]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_j7pi3")]
+next = ExtResource("5_ffdq0")
+level = 5
+
+[node name="mur" parent="." instance=ExtResource("5_ebkpv")]
+layer_0/tile_data = PackedInt32Array(589840, 65536, 0, 589841, 65536, 0, 524306, 0, 1, 458770, 0, 1, 393234, 0, 1, 327698, 0, 1, 262162, 0, 1, 196625, 65536, 2, 196624, 65536, 2, 196623, 65536, 2, 196622, 65536, 2, 196621, 65536, 2, 196620, 65536, 2, 262155, 131072, 1, 327691, 131072, 1, 393227, 131072, 1, 458763, 131072, 1, 524299, 131072, 1, 589835, 131072, 1, 524303, 131072, 1, 458767, 131072, 1, 393231, 131072, 0, 393230, 0, 0, 458766, 0, 1, 524302, 0, 1, 589838, 0, 1, 655374, 0, 2, 655375, 65536, 2, 655376, 65536, 2, 655377, 65536, 2, 655378, 65536, 2, 655379, 131072, 2, 589843, 131072, 1, 524307, 131072, 1, 458771, 131072, 1, 393235, 131072, 1, 327699, 131072, 1, 262163, 131072, 1, 196627, 131072, 1, 131091, 131072, 0, 131090, 65536, 0, 131089, 65536, 0, 131088, 65536, 0, 131087, 65536, 0, 131086, 65536, 0, 131085, 65536, 0, 131084, 65536, 0, 131083, 65536, 0, 131082, 0, 0, 196618, 0, 1, 262154, 0, 1, 327690, 0, 1, 393226, 0, 1, 458762, 0, 1, 524298, 0, 1, 589834, 0, 1, 655370, 0, 1, 720906, 0, 1, 786442, 0, 1, 851978, 0, 1, 917514, 0, 2, 917515, 65536, 2, 917516, 65536, 2, 917517, 65536, 2, 917518, 65536, 2, 917519, 65536, 2, 917520, 65536, 2, 917521, 65536, 2, 917522, 65536, 2, 917523, 65536, 2, 917524, 65536, 2, 917525, 65536, 2, 917526, 65536, 2, 655371, 131072, 1, 720907, 131072, 1, 786443, 131072, 1, 851980, 65536, 0, 851981, 65536, 0, 851982, 65536, 0, 851983, 65536, 0, 851984, 65536, 0, 851985, 65536, 0, 851986, 65536, 0, 851987, 65536, 0, 851988, 65536, 0, 851989, 65536, 0, 786454, 0, 1, 720918, 0, 1, 655382, 0, 1, 589846, 0, 1, 524310, 0, 1, 458774, 0, 1, 393238, 0, 1, 327702, 0, 1, 262166, 0, 1, 196630, 0, 1, 131094, 0, 1, 65558, 0, 1, 22, 0, 1, -65515, 65536, 2, -65516, 65536, 2, -65517, 65536, 2, -65518, 65536, 2, -65519, 65536, 2, -65520, 65536, 2, -65521, 65536, 2, -65522, 65536, 2, -65523, 65536, 2, -65524, 65536, 2, -65525, 65536, 2, -65526, 65536, 2, -65527, 65536, 2, -65528, 65536, 2, 7, 131072, 1, 65543, 131072, 1, 131079, 131072, 1, 196615, 131072, 1, 262151, 131072, 1, 327687, 131072, 1, 393223, 131072, 1, 458759, 131072, 1, 524295, 131072, 1, 589831, 131072, 1, 655367, 131072, 1, 720903, 131072, 1, 786439, 131072, 1, 851975, 131072, 1, 917511, 131072, 1, 983047, 131072, 1, 1048583, 131072, 1, 1114120, 65536, 0, 1114121, 65536, 0, 1114122, 65536, 0, 1114123, 65536, 0, 1114124, 65536, 0, 1114125, 65536, 0, 1114126, 65536, 0, 1114127, 65536, 0, 1114128, 65536, 0, 1114129, 65536, 0, 1114130, 65536, 0, 1114131, 65536, 0, 1114132, 65536, 0, 1114133, 65536, 0, 1114134, 65536, 0, 1114135, 65536, 0, 1114136, 65536, 0, 917527, 131072, 2, 851991, 131072, 1, 786455, 131072, 1, 720919, 131072, 1, 655383, 131072, 1, 589847, 131072, 1, 524311, 131072, 1, 458775, 131072, 1, 393239, 131072, 1, 327703, 131072, 1, 262167, 131072, 1, 196631, 131072, 1, 131095, 131072, 1, 65559, 131072, 1, 23, 131072, 1, -65513, 131072, 1, -131050, 65536, 0, -131051, 65536, 0, -131052, 65536, 0, -131053, 65536, 0, -131054, 65536, 0, -131055, 65536, 0, -131056, 65536, 0, -131057, 65536, 0, -131058, 65536, 0, -131059, 65536, 0, -131060, 65536, 0, -131061, 65536, 0, -131062, 65536, 0, -131063, 65536, 0, -131064, 65536, 0, -131065, 65536, 0, -131066, 65536, 0, -131049, 131072, 0, -131067, 65536, 0, -131068, 0, 0, -65532, 0, 1, 4, 0, 1, 65540, 0, 1, 131075, 65536, 0, 131074, 65536, 0, 131073, 65536, 0, 131072, 65536, 0, 196607, 65536, 0, 196606, 65536, 0, 131069, 131072, 1, 65533, 131072, 1, -3, 131072, 1, -65539, 131072, 1, -131075, 131072, 1, -196611, 131072, 1, -262146, 65536, 2, -262145, 65536, 2, -327680, 65536, 2, -327679, 65536, 2, -327678, 65536, 2, -327677, 65536, 2, -327676, 65536, 2, -327675, 65536, 2, -327674, 65536, 2, -327673, 65536, 2, -327672, 65536, 2, -327671, 65536, 2, -327670, 65536, 2, -327669, 65536, 2, -327668, 65536, 2, -327667, 65536, 2, 196605, 65536, 1, -262147, 65536, 1, 131076, 65536, 1, 1114137, 65536, 0, 1048602, 0, 1, 983066, 0, 1, 917530, 0, 1, 851994, 0, 1, 786458, 0, 1, 720922, 0, 1, 655386, 0, 1, 589850, 0, 1, 524314, 0, 1, 458778, 0, 1, 393242, 0, 1, 327706, 0, 1, 262170, 0, 1, 196634, 0, 1, 131098, 0, 1, 65562, 0, 1, 26, 0, 1, -65510, 0, 1, -131046, 0, 1, -196582, 0, 1, -262118, 0, 1, -327666, 65536, 2, -327665, 65536, 2, -327664, 65536, 2, -327663, 65536, 2, -327662, 65536, 2, -327661, 65536, 2, -327660, 65536, 2, -327659, 65536, 2, -327658, 65536, 2, -327655, 65536, 2, -327657, 65536, 2, -327656, 65536, 2, -327654, 65536, 1, -65514, 65536, 1, 196626, 65536, 1, 196619, 65536, 1, -65529, 65536, 1, 851979, 65536, 1, 851990, 65536, 1, 589842, 65536, 1, 589839, 65536, 1, 1114119, 65536, 1, 1114138, 65536, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_tbitd")
+
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(440, -294)
+rotation = 0.0015674
+scale = Vector2(0.7, 0.7)
+target = NodePath("../../Fleche_complet/fleche")
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5s1mv")
+
+[node name="ennemy_follow" parent="Path2D2" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(2521, 1066)
+rotation = 1.48014
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 8.0
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4grwm")
+
+[node name="ennemy_follow" parent="Path2D3" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(1082, 1614)
+rotation = -2.94994
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 7.0
+
+[node name="Path2D4" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7xp41")
+
+[node name="ennemy_follow" parent="Path2D4" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(1079, 104)
+rotation = -0.0264126
+vitesse = 300.0
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 5.0
+
+[node name="Path2D5" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nvke7")
+
+[node name="ennemy_follow" parent="Path2D5" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(1506, 546)
+rotation = -1.60608
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
+
+[connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
+[connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
+[connection signal="fleche_hit" from="Fleche_complet" to="CanvasLayer" method="_on_fleche_complet_fleche_hit"]
+[connection signal="cible_atteinte" from="cible" to="." method="_on_cible_cible_atteinte"]
+[connection signal="cible_atteinte" from="cible" to="CanvasLayer" method="_on_cible_cible_atteinte"]
+[connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]
+[connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
+
+[editable path="Fleche_complet"]
