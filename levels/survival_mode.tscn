@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://byj7fttfyjwpn"]
+[gd_scene load_steps=8 format=3 uid="uid://byj7fttfyjwpn"]
 
 [ext_resource type="Script" path="res://scripts/survival_mode.gd" id="1_eikrt"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_5tymi"]
 [ext_resource type="PackedScene" uid="uid://63djbdt0jccm" path="res://scenes/projectile.tscn" id="2_jkjdh"]
 [ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="4_2jbam"]
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_3iipn"]
+[ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="6_aadbf"]
 
 [sub_resource type="Curve2D" id="Curve2D_kymmt"]
 _data = {
@@ -35,6 +36,9 @@ curve = SubResource("Curve2D_kymmt")
 [node name="BulletSpawnLocation" type="PathFollow2D" parent="BulletPath"]
 position = Vector2(-66, -537)
 rotation = -0.0359984
+
+[node name="cible" parent="BulletPath" instance=ExtResource("6_aadbf")]
+position = Vector2(-3162, 408)
 
 [connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
 [connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
