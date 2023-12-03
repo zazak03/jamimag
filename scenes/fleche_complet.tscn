@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" path="res://scripts/fleche_complet.gd" id="1_filkd"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
-[ext_resource type="Texture2D" uid="uid://df4m40pbf1ax3" path="res://assets/fleche.png" id="2_htwda"]
-[ext_resource type="Texture2D" uid="uid://cgjmjlbh0hs7j" path="res://scenes/assets/fleche.png" id="2_htwda"]
 [ext_resource type="Shader" path="res://others/objective_hint.gdshader" id="4_jafdn"]
-[ext_resource type="Texture2D" uid="uid://dbbnd3yeuf753" path="res://scenes/assets/icon.svg" id="4_suc36"]
+[ext_resource type="Texture2D" uid="uid://bjn2eqb5pjoo2" path="res://assets/fleche.png" id="4_shjhm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3vg6h"]
 shader = ExtResource("4_jafdn")
 shader_parameter/fade_out = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_44onf"]
+load_path = "res://.godot/imported/icon.svg-8badd6dc241d3cf9f1af5e57236e8356.ctex"
 
 [node name="Fleche_complet" type="Node2D"]
 script = ExtResource("1_filkd")
@@ -20,7 +21,7 @@ hint_fade_out_time = 0.2
 [node name="Objective_hint" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3vg6h")
 position = Vector2(700, 352)
-texture = ExtResource("4_suc36")
+texture = SubResource("CompressedTexture2D_44onf")
 
 [node name="PhysiqueCape" type="Node2D" parent="."]
 
@@ -36,7 +37,7 @@ script = ExtResource("1_pdq3k")
 
 [node name="FlecheSprite" type="Sprite2D" parent="fleche"]
 position = Vector2(49.8, -0.299999)
-texture = ExtResource("2_htwda")
+texture = ExtResource("4_shjhm")
 
 [node name="Camera" type="Camera2D" parent="fleche"]
 position = Vector2(0, 2)
