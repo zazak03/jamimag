@@ -10,21 +10,21 @@
 
 [sub_resource type="Curve2D" id="Curve2D_2vpub"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 975, -51, 0, 0, 0, 0, 969, 115)
+"points": PackedVector2Array(0, 0, 0, 0, 975, -51, 0, 0, 0, 0, 969, 115, 0, 0, 0, 0, 987, 41, 0, 0, 0, 0, 975, -51)
 }
-point_count = 2
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_mfr3m"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 731, -113, 0, 0, 0, 0, 120, -113, 0, 0, 0, 0, -869, -102)
+"points": PackedVector2Array(0, 0, 0, 0, 731, -113, 0, 0, 0, 0, 120, -113, 0, 0, 0, 0, -869, -102, 0, 0, 0, 0, 109, -131, 0, 0, 0, 0, 731, -113)
 }
-point_count = 3
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_nvm1b"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 740, 129, 0, 0, 0, 0, 175, 127, 0, 0, 0, 0, -880, 99)
+"points": PackedVector2Array(0, 0, 0, 0, 740, 129, 0, 0, 0, 0, 175, 127, 0, 0, 0, 0, 66.6724, 115.817, 0, 0, 0, 0, -880, 99, 0, 0, 0, 0, 740, 129)
 }
-point_count = 3
+point_count = 5
 
 [node name="TemplateScene" type="Node2D"]
 script = ExtResource("1_qcs7s")
@@ -45,7 +45,6 @@ curve = SubResource("Curve2D_2vpub")
 
 [node name="ennemy_follow" parent="Path2D3" node_paths=PackedStringArray("target") instance=ExtResource("5_3cp86")]
 position = Vector2(975, -51)
-vitesse = 200.0
 target = NodePath("../../Fleche_complet/fleche")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -53,7 +52,6 @@ curve = SubResource("Curve2D_mfr3m")
 
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("5_3cp86")]
 position = Vector2(731, -113)
-vitesse = 200.0
 target = NodePath("../../Fleche_complet/fleche")
 
 [node name="Path2D2" type="Path2D" parent="."]
@@ -61,7 +59,6 @@ curve = SubResource("Curve2D_nvm1b")
 
 [node name="ennemy_follow" parent="Path2D2" node_paths=PackedStringArray("target") instance=ExtResource("5_3cp86")]
 position = Vector2(740, 129)
-vitesse = 200.0
 target = NodePath("../../Fleche_complet/fleche")
 
 [node name="mur" parent="." instance=ExtResource("6_gi15n")]
