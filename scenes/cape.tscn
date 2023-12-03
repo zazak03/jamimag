@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyiq4tymnkxsp"]
-
-[ext_resource type="Texture2D" uid="uid://dwqmuuji6qm24" path="res://assets/SpriteCape.png" id="1_mt6jx"]
+[gd_scene load_steps=2 format=3 uid="uid://dyiq4tymnkxsp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fx345"]
 radius = 5.0
 
 [node name="PointCape" type="Area2D" groups=["cape"]]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mt6jx")
 
 [node name="hitboxUnit" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fx345")
