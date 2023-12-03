@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ghn66e5oxxao"]
+[gd_scene load_steps=4 format=3 uid="uid://ghn66e5oxxao"]
 
 [ext_resource type="Script" path="res://scripts/loadfromcredits.gd" id="1_xgst6"]
 [ext_resource type="PackedScene" uid="uid://daryauji2kutm" path="res://levels/level_five_ancien.tscn" id="2_cjf42"]
+[ext_resource type="PackedScene" uid="uid://byj7fttfyjwpn" path="res://levels/survival_mode.tscn" id="3_24y2p"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_xgst6")
 worstlevel = ExtResource("2_cjf42")
+modesurvie = ExtResource("3_24y2p")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 187.0

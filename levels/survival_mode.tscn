@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://byj7fttfyjwpn"]
+
+[ext_resource type="Script" path="res://scripts/survival_mode.gd" id="1_eikrt"]
+[ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_5tymi"]
+[ext_resource type="PackedScene" uid="uid://63djbdt0jccm" path="res://scenes/projectile.tscn" id="2_jkjdh"]
+[ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="4_2jbam"]
+[ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_3iipn"]
+
+[sub_resource type="Curve2D" id="Curve2D_kymmt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -66, -537, 0, 0, 0, 0, 2794, -640, 0, 0, 0, 0, 2796, 1542, 0, 0, 0, 0, -159, 1545, 0, 0, 0, 0, -66, -537)
+}
+point_count = 5
+
+[node name="TemplateSceneSurvival" type="Node2D"]
+script = ExtResource("1_eikrt")
+bullet_scene = ExtResource("2_jkjdh")
+
+[node name="Fleche_complet" parent="." instance=ExtResource("2_5tymi")]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_3iipn")]
+level = 1
+
+[node name="mur" parent="." instance=ExtResource("4_2jbam")]
+layer_0/tile_data = PackedInt32Array(-393220, 65536, 1, -327684, 65536, 1, -262148, 65536, 1, -196612, 65536, 1, -131076, 65536, 1, -65540, 65536, 1, -4, 65536, 1, 65532, 65536, 1, 131068, 65536, 1, 196604, 65536, 1, 262140, 65536, 1, 327676, 65536, 1, 393212, 65536, 1, 327709, 65536, 1, 262173, 65536, 1, 196637, 65536, 1, 131101, 65536, 1, 65565, 65536, 1, 29, 65536, 1, -65507, 65536, 1, -131043, 65536, 1, -196579, 65536, 1, -262115, 65536, 1, -327651, 65536, 1, -393187, 65536, 1, -458723, 65536, 1, -524259, 65536, 1, -458756, 65536, 1, -458755, 65536, 1, -458754, 65536, 1, -458753, 65536, 1, -524288, 65536, 1, -524287, 65536, 1, -524286, 65536, 1, -524285, 65536, 1, -524284, 65536, 1, -524283, 65536, 1, -524282, 65536, 1, -524281, 65536, 1, -524280, 65536, 1, -524279, 65536, 1, -524278, 65536, 1, -524277, 65536, 1, -524276, 65536, 1, -524275, 65536, 1, -524274, 65536, 1, -524273, 65536, 1, -524272, 65536, 1, -524265, 65536, 1, -524271, 65536, 1, -524270, 65536, 1, -524269, 65536, 1, -524268, 65536, 1, -524267, 65536, 1, -524266, 65536, 1, -524264, 65536, 1, -524263, 65536, 1, -524262, 65536, 1, -524261, 65536, 1, -524260, 65536, 1, 458748, 65536, 1, 524284, 65536, 1, 589820, 65536, 1, 655356, 65536, 1, 720892, 65536, 1, 786428, 65536, 1, 851964, 65536, 1, 917500, 65536, 1, 983036, 65536, 1, 1048572, 65536, 1, 1114108, 65536, 1, 1114109, 65536, 1, 1114110, 65536, 1, 1114111, 65536, 1, 1048576, 65536, 1, 1048577, 65536, 1, 1048578, 65536, 1, 1048579, 65536, 1, 1048580, 65536, 1, 1048581, 65536, 1, 1048582, 65536, 1, 1048583, 65536, 1, 1048584, 65536, 1, 1048585, 65536, 1, 1048586, 65536, 1, 1048587, 65536, 1, 1048588, 65536, 1, 1048589, 65536, 1, 1048590, 65536, 1, 1048591, 65536, 1, 1048592, 65536, 1, 1048593, 65536, 1, 1048594, 65536, 1, 1048595, 65536, 1, 1048596, 65536, 1, 1048597, 65536, 1, 1048598, 65536, 1, 1048599, 65536, 1, 1048600, 65536, 1, 1048601, 65536, 1, 1048603, 65536, 1, 1048604, 65536, 1, 1048605, 65536, 1, 393245, 65536, 1, 458781, 65536, 1, 524317, 65536, 1, 1048602, 65536, 1, 589853, 65536, 1, 655389, 65536, 1, 720925, 65536, 1, 786461, 65536, 1, 851997, 65536, 1, 917533, 65536, 1, 983069, 65536, 1)
+
+[node name="BulletPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kymmt")
+
+[node name="BulletSpawnLocation" type="PathFollow2D" parent="BulletPath"]
+position = Vector2(-66, -537)
+rotation = -0.0359984
+
+[connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
+[connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
+[connection signal="fleche_hit" from="Fleche_complet" to="CanvasLayer" method="_on_fleche_complet_fleche_hit"]
+[connection signal="timeout" from="ScoreTimer" to="CanvasLayer" method="_on_score_timer_timeout"]
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
+[connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
+
+[editable path="CanvasLayer"]
