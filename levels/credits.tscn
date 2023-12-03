@@ -1,6 +1,11 @@
-[gd_scene format=3 uid="uid://ghn66e5oxxao"]
+[gd_scene load_steps=3 format=3 uid="uid://ghn66e5oxxao"]
+
+[ext_resource type="Script" path="res://scripts/loadfromcredits.gd" id="1_xgst6"]
+[ext_resource type="PackedScene" uid="uid://daryauji2kutm" path="res://levels/level_five_ancien.tscn" id="2_cjf42"]
 
 [node name="Credits" type="Node2D"]
+script = ExtResource("1_xgst6")
+worstlevel = ExtResource("2_cjf42")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 187.0
@@ -14,3 +19,21 @@ Assets par Yoel Villain
 Musique:
 (a compléter)
 Un jeu réalisé sur Godot"
+
+[node name="WorstButton" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 30.0
+offset_right = 615.0
+offset_bottom = 61.0
+text = "Notre pire niveau"
+
+[node name="Survivalbutton" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 83.0
+offset_right = 615.0
+offset_bottom = 114.0
+text = "Mode survie
+"
+
+[connection signal="pressed" from="WorstButton" to="." method="_on_worst_button_pressed"]
+[connection signal="pressed" from="Survivalbutton" to="." method="_on_survivalbutton_pressed"]

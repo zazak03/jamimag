@@ -3,14 +3,13 @@
 [ext_resource type="Script" path="res://scripts/fleche_complet.gd" id="1_filkd"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
 [ext_resource type="Shader" path="res://others/objective_hint.gdshader" id="4_jafdn"]
-[ext_resource type="Texture2D" uid="uid://bjn2eqb5pjoo2" path="res://assets/fleche.png" id="4_shjhm"]
+[ext_resource type="Texture2D" uid="uid://dr2x664irm2v1" path="res://assets/fleche.png" id="4_shjhm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3vg6h"]
 shader = ExtResource("4_jafdn")
 shader_parameter/fade_out = 1.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_44onf"]
-load_path = "res://.godot/imported/icon.svg-8badd6dc241d3cf9f1af5e57236e8356.ctex"
 
 [node name="Fleche_complet" type="Node2D"]
 script = ExtResource("1_filkd")
