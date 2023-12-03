@@ -89,7 +89,7 @@ position = Vector2(1915, -4)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_e8j7w")]
 next = ExtResource("6_583y5")
-level = 1
+level = 6
 
 [node name="easy" type="Label" parent="."]
 offset_left = 1262.0

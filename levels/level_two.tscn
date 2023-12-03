@@ -37,7 +37,6 @@ curve = SubResource("Curve2D_so4ef")
 [node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("6_bglr8")]
 position = Vector2(1353, 149)
 target = NodePath("../../Fleche_complet/fleche")
-vitesse_de_tire = 5.0
 
 [connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
 [connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
