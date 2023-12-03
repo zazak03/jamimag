@@ -10,6 +10,7 @@ func _ready():
 	$ennemy/Timer.wait_time = vitesse_de_tire
 	$ennemy/Timer.start(0)
 	$ennemy.global_rotation = 0
+	$ennemy.rotate(get_angle_to(target.global_position))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

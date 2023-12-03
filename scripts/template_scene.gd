@@ -55,5 +55,8 @@ func _on_ennemy_follow_ennemy_hit():
 	var children = get_children()
 	for child in children:
 		if child is Path2D:
-			child.get_child(0).vitesse_de_tire -= 0.5
-			child.get_child(0).vitesse_de_tire += 20
+			var enfant_denfant = child.get_children()
+			for enfant in enfant_denfant:
+				if enfant.is_in_group("ennemis"):
+					child.get_child(0).vitesse_de_tire -= 0.5
+					child.get_child(0).vitesse += 20

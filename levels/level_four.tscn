@@ -80,5 +80,8 @@ layer_0/tile_data = PackedInt32Array(-131075, 65536, 2, -131074, 65536, 2, -1310
 [connection signal="cible_atteinte" from="cible" to="CanvasLayer" method="_on_cible_cible_atteinte"]
 [connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]
 [connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
+[connection signal="ennemy_hit" from="Path2D3/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D2/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
 
 [editable path="Fleche_complet"]
