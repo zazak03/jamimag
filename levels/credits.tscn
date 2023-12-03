@@ -15,22 +15,3 @@ Cleante Ravinet
 Tristan Bein
 Assets par Yoel Villain
 Un jeu réalisé sur Godot"
-
-[node name="worst" type="Button" parent="."]
-visible = false
-offset_left = 719.0
-offset_top = 21.0
-offset_right = 814.0
-offset_bottom = 52.0
-text = "Worst level"
-
-[node name="survival" type="Button" parent="."]
-visible = false
-offset_left = 717.0
-offset_top = 65.0
-offset_right = 835.0
-offset_bottom = 96.0
-text = "Survival mode"
-
-[connection signal="pressed" from="worst" to="." method="_on_worst_pressed"]
-[connection signal="pressed" from="survival" to="." method="_on_survival_pressed"]

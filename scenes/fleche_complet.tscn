@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/fleche_complet.gd" id="1_filkd"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
-[ext_resource type="Texture2D" uid="uid://cf2t8edd3flsu" path="res://assets/dark_cible.png" id="3_ii217"]
+[ext_resource type="Texture2D" uid="uid://dbbnd3yeuf753" path="res://assets/icon.svg" id="3_xfkip"]
 [ext_resource type="Texture2D" uid="uid://df4m40pbf1ax3" path="res://assets/fleche.png" id="4_shjhm"]
 
 [node name="Fleche_complet" type="Node2D"]
@@ -15,7 +15,7 @@ hint_fade_out_time = 0.2
 z_index = 1
 position = Vector2(632, 360)
 scale = Vector2(0.14, 0.14)
-texture = ExtResource("3_ii217")
+texture = ExtResource("3_xfkip")
 
 [node name="PhysiqueCape" type="Node2D" parent="."]
 
