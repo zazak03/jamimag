@@ -74,7 +74,7 @@ polygon = PackedVector2Array(28, -53, 44, 0, 30, 40, -28, 43, -36, -3, -25, -53)
 [node name="ennemy_oriantation" type="Node2D" parent="ennemy"]
 
 [node name="bullet_start" type="Node2D" parent="ennemy/ennemy_oriantation"]
-position = Vector2(100, 0)
+position = Vector2(150, 0)
 
 [node name="Timer" type="Timer" parent="ennemy"]
 autostart = true

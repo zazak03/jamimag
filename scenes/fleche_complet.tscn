@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/fleche_complet.gd" id="1_filkd"]
 [ext_resource type="Script" path="res://scripts/Fleche.gd" id="1_pdq3k"]
-[ext_resource type="Texture2D" uid="uid://cgjmjlbh0hs7j" path="res://assets/fleche.png" id="2_htwda"]
+[ext_resource type="Texture2D" uid="uid://df4m40pbf1ax3" path="res://assets/fleche.png" id="2_htwda"]
 
 [node name="Fleche_complet" type="Node2D"]
 script = ExtResource("1_filkd")
@@ -27,7 +27,6 @@ texture = ExtResource("2_htwda")
 
 [node name="Camera" type="Camera2D" parent="fleche"]
 position = Vector2(0, 2)
-zoom = Vector2(0.5, 0.5)
 
 [node name="FlecheHitbox" type="CollisionPolygon2D" parent="fleche"]
 position = Vector2(49.8, -3.3)

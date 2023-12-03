@@ -31,3 +31,5 @@ layer_0/tile_data = PackedInt32Array(-131072, 65536, 2, -131071, 65536, 2, -1310
 [connection signal="cible_atteinte" from="cible" to="CanvasLayer" method="_on_cible_cible_atteinte"]
 [connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]
 [connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
+
+[editable path="Fleche_complet"]
