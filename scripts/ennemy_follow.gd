@@ -18,5 +18,6 @@ func _process(delta):
 
 
 func _on_ennemy_area_entered(area):
-	ennemy_hit.emit()
-	queue_free()
+	if area.is_in_group("projectile"):
+		ennemy_hit.emit()
+		queue_free()

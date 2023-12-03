@@ -79,4 +79,5 @@ position = Vector2(135, 0)
 [node name="Timer" type="Timer" parent="ennemy"]
 autostart = true
 
+[connection signal="area_entered" from="ennemy" to="." method="_on_ennemy_area_entered"]
 [connection signal="timeout" from="ennemy/Timer" to="ennemy" method="_on_timer_timeout"]
