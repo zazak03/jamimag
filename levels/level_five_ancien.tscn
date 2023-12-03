@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://daryauji2kutm"]
+[gd_scene load_steps=13 format=3 uid="uid://daryauji2kutm"]
 
 [ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_vkkib"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_ykjwq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_j7pi3"]
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="5_0ec7e"]
 [ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="5_ebkpv"]
+[ext_resource type="PackedScene" uid="uid://ghn66e5oxxao" path="res://levels/credits.tscn" id="5_ffdq0"]
 
 [sub_resource type="Curve2D" id="Curve2D_tbitd"]
 _data = {
@@ -48,6 +49,7 @@ position = Vector2(1681, 789)
 [node name="DeincrementTimer" type="Timer" parent="."]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_j7pi3")]
+next = ExtResource("5_ffdq0")
 level = 5
 
 [node name="mur" parent="." instance=ExtResource("5_ebkpv")]
