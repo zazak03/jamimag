@@ -27,6 +27,7 @@ texture = ExtResource("2_htwda")
 
 [node name="Camera" type="Camera2D" parent="fleche"]
 position = Vector2(0, 2)
+zoom = Vector2(0.8, 0.8)
 
 [node name="FlecheHitbox" type="CollisionPolygon2D" parent="fleche"]
 position = Vector2(49.8, -3.3)
