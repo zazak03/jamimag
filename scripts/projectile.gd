@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 150
+var speed = 100
 var screen_size
 
 signal bullet_destroyed

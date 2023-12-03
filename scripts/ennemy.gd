@@ -11,6 +11,7 @@ func tirer():
 	get_tree().root.get_child(0).add_child(bullet_instance)
 	bullet_instance.global_position = $ennemy_oriantation/bullet_start.global_position
 	bullet_instance.global_rotation = $ennemy_oriantation.global_rotation + PI/2
+	bullet_instance.speed += get_parent().vitesse
 	
 
 

@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuirv8gek48kn"]
+[gd_scene load_steps=14 format=3 uid="uid://cuirv8gek48kn"]
 
 [ext_resource type="Script" path="res://scripts/template_scene.gd" id="1_vkkib"]
 [ext_resource type="PackedScene" uid="uid://dtijo7v6bahj7" path="res://scenes/fleche_complet.tscn" id="2_ykjwq"]
 [ext_resource type="PackedScene" uid="uid://tpcpgbmcxab" path="res://scenes/cible.tscn" id="3_tuyst"]
 [ext_resource type="PackedScene" uid="uid://brrdayx4y2d5" path="res://scenes/hud.tscn" id="4_j7pi3"]
 [ext_resource type="PackedScene" uid="uid://0esgngfl4gg0" path="res://scenes/ennemy.tscn" id="5_0ec7e"]
+[ext_resource type="PackedScene" uid="uid://ct8u3hqq0fikg" path="res://levels/level_six.tscn" id="5_cs2y6"]
 [ext_resource type="PackedScene" uid="uid://o7vlus230k1g" path="res://scenes/mur.tscn" id="5_ebkpv"]
-[ext_resource type="PackedScene" uid="uid://ghn66e5oxxao" path="res://levels/credits.tscn" id="5_ffdq0"]
 
 [sub_resource type="Curve2D" id="Curve2D_wv3jf"]
 _data = {
@@ -17,6 +17,30 @@ point_count = 4
 [sub_resource type="Curve2D" id="Curve2D_nminl"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1496, 906, 0, 0, 0, 0, 5053, 887, 0, 0, 0, 0, 3271, 819, 0, 0, 0, 0, 1496, 906)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_82yw3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1463, -262, 0, 0, 0, 0, 1507, -970, 0, 0, 0, 0, 1539, -598, 0, 0, 0, 0, 1463, -262)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_0e54x"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1470, 763, 0, 0, 0, 0, 1440, 91, 0, 0, 0, 0, 1503, 463, 0, 0, 0, 0, 1470, 763)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_6hg5v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5055, -53, 0, 0, 0, 0, 5044, 804, 0, 0, 0, 0, 4984, 389, 0, 0, 0, 0, 5055, -53)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_dno61"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5018, -1144, 0, 0, 0, 0, 5050, -409, 0, 0, 0, 0, 4978, -762, 0, 0, 0, 0, 5018, -1144)
 }
 point_count = 4
 
@@ -31,7 +55,7 @@ position = Vector2(5060, -257)
 [node name="DeincrementTimer" type="Timer" parent="."]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_j7pi3")]
-next = ExtResource("5_ffdq0")
+next = ExtResource("5_cs2y6")
 level = 5
 
 [node name="mur" parent="." instance=ExtResource("5_ebkpv")]
@@ -40,14 +64,57 @@ layer_0/tile_data = PackedInt32Array(-131075, 65536, 1, -65539, 65536, 1, -3, 65
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_wv3jf")
 
-[node name="ennemy_follow" parent="Path2D" instance=ExtResource("5_0ec7e")]
+[node name="ennemy_follow" parent="Path2D" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
 position = Vector2(1601, -1206)
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
 
 [node name="Path2D2" type="Path2D" parent="."]
 curve = SubResource("Curve2D_nminl")
 
-[node name="ennemy_follow" parent="Path2D2" instance=ExtResource("5_0ec7e")]
+[node name="ennemy_follow" parent="Path2D2" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
 position = Vector2(1496, 906)
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
+
+[node name="Path2D3" type="Path2D" parent="."]
+curve = SubResource("Curve2D_82yw3")
+
+[node name="ennemy_follow" parent="Path2D3" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(1463, -262)
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
+
+[node name="Path2D4" type="Path2D" parent="."]
+curve = SubResource("Curve2D_0e54x")
+
+[node name="ennemy_follow" parent="Path2D4" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(1470, 763)
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
+
+[node name="Path2D5" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6hg5v")
+
+[node name="ennemy_follow" parent="Path2D5" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(5055, -53)
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
+
+[node name="Path2D6" type="Path2D" parent="."]
+curve = SubResource("Curve2D_dno61")
+
+[node name="ennemy_follow" parent="Path2D6" node_paths=PackedStringArray("target") instance=ExtResource("5_0ec7e")]
+position = Vector2(5018, -1144)
+target = NodePath("../../Fleche_complet/fleche")
+vitesse_de_tire = 3.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1480.0
+offset_top = -128.0
+offset_right = 1590.0
+offset_bottom = -102.0
+text = "Cible par la  ->"
 
 [connection signal="updatehud" from="." to="CanvasLayer" method="_on_template_scene_updatehud"]
 [connection signal="fleche_hit" from="Fleche_complet" to="." method="_on_fleche_complet_fleche_hit"]
@@ -57,5 +124,10 @@ position = Vector2(1496, 906)
 [connection signal="timeout" from="DeincrementTimer" to="." method="_on_deincrement_timer_timeout"]
 [connection signal="start_game" from="CanvasLayer" to="." method="_on_canvas_layer_start_game"]
 [connection signal="ennemy_hit" from="Path2D/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D2/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D3/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D4/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D5/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
+[connection signal="ennemy_hit" from="Path2D6/ennemy_follow" to="." method="_on_ennemy_follow_ennemy_hit"]
 
 [editable path="Fleche_complet"]

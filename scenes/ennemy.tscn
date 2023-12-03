@@ -51,6 +51,7 @@ _data = {
 [node name="ennemy_follow" type="PathFollow2D" groups=["ennemis"]]
 rotates = false
 script = ExtResource("1_2md5m")
+vitesse_de_tire = 5.0
 
 [node name="ennemy" type="Area2D" parent="." groups=["ennemi"]]
 script = ExtResource("2_j6oky")
