@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/ennemy_follow.gd" id="1_2md5m"]
 [ext_resource type="Script" path="res://scripts/ennemy.gd" id="2_j6oky"]
-[ext_resource type="Texture2D" uid="uid://dbbnd3yeuf753" path="res://assets/icon.svg" id="3_56d6m"]
-[ext_resource type="Texture2D" uid="uid://dwqmuuji6qm24" path="res://assets/SpriteCape.png" id="4_b374i"]
+[ext_resource type="Texture2D" uid="uid://523w27lmkwya" path="res://assets/tank_true.png" id="3_x0dwb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvip6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_56d6m")
+"texture": ExtResource("3_x0dwb")
 }],
 "loop": true,
 "name": &"default",
@@ -53,11 +52,12 @@ _data = {
 rotates = false
 script = ExtResource("1_2md5m")
 
-[node name="ennemy" type="Area2D" parent="."]
+[node name="ennemy" type="Area2D" parent="." groups=["ennemi"]]
 script = ExtResource("2_j6oky")
 
 [node name="sprite" type="AnimatedSprite2D" parent="ennemy"]
 rotation = 5.93412
+scale = Vector2(0.42759, 0.268779)
 sprite_frames = SubResource("SpriteFrames_bvip6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ennemy"]

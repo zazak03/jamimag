@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://63djbdt0jccm"]
 
-[ext_resource type="Texture2D" uid="uid://dxxcyyk6opg3s" path="res://assets/test-alpha.png" id="1_17lt6"]
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_50jqa"]
+[ext_resource type="Texture2D" uid="uid://b3gyjhurcgktf" path="res://assets/bullet3.png" id="2_430s4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uxdfl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_17lt6")
+"texture": ExtResource("2_430s4")
 }],
 "loop": true,
 "name": &"default",
@@ -15,8 +15,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0e6k"]
-radius = 53.0
-height = 182.0
+radius = 34.0
+height = 126.0
 
 [node name="Bullet" type="Area2D" groups=["projectile"]]
 scale = Vector2(0.5, 0.5)
